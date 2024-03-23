@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 //public class MainActivity extends AppCompatActivity {
 //
 //    private Button register;
@@ -52,17 +50,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText email;
-    EditText password;
-    Button loginButton;
-    TextView signUpText;
+    private EditText email;
+    private EditText password;
+    private Button loginButton;
+    private TextView signUpText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        loginButton = findViewById(R.id.loginButton);
+        loginButton = findViewById(R.id.registerButton);
 
         signUpText = findViewById(R.id.signupText);
         loginButton.setOnClickListener(new View.OnClickListener() {
