@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285819341970",
+    "project_id": "ruhealthy-50318",
+    "storage_bucket": "ruhealthy-50318.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285819341970:android:1c08e2a2243e4372a2ea4b",
+        "android_client_info": {
+          "package_name": "com.example.ruhealthytwo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACQerxP1e1plr2cvwEYAeHJGZfO6whKYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
