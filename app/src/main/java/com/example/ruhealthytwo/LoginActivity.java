@@ -1,41 +1,41 @@
-//package com.example.ruhealthytwo;
-//
-//import androidx.annotation.NonNull;
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.util.Log;
-//import android.view.View;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.Toast;
-//
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.android.material.textfield.TextInputEditText;
-//import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.auth.FirebaseUser;
-//
-//public class LoginActivity extends AppCompatActivity {
-//
-//    Button signInButton;
-//
-//    TextInputEditText signInEmail, signInPassword;
-//
-//    Boolean authentication;
-//
-//    private static final String TAG = "EmailPassword";
-//    // [START declare_auth]
-//    private FirebaseAuth mAuth;
-//    // [END declare_auth]
-//
+package com.example.ruhealthytwo;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class LoginActivity extends AppCompatActivity {
+
+    Button signInButton;
+
+    TextInputEditText signInEmail, signInPassword;
+
+    Boolean authentication;
+
+    private static final String TAG = "EmailPassword";
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
+    // [END declare_auth]
+
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setTheme(R.style.Theme_NutritionApp);
-//        setContentView(R.layout.activity_login2);
+//        setContentView(R.layout.login_activity);
 //
 //        mAuth = FirebaseAuth.getInstance();
 //
@@ -50,8 +50,8 @@
 //
 //
 //    }
-//
-//    // [START on_start_check_user]
+
+    // [START on_start_check_user]
 //    @Override
 //    public void onStart() {
 //        super.onStart();
@@ -109,6 +109,6 @@
 //    }
 //
 //    private void reload() { }
-//
-//
-//}
+
+
+}

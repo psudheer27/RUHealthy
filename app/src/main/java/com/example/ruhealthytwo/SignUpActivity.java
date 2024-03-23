@@ -21,7 +21,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private static final String TAG2 = "SignUpActivity";
+    private static final String TAG = "SignUpActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
