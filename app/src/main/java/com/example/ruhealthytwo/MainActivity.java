@@ -18,43 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-//public class MainActivity extends AppCompatActivity {
-//
-//    private Button register;
-//    private Button login;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        register = findViewById(R.id.register);
-//        login = findViewById(R.id.login);
-//
-//        register.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
-//
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
-//        // Initialize Firebase Auth
-//        //mAuth = FirebaseAuth.getInstance();
-//    }
-//}
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -64,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView signUpText;
 
     private FirebaseAuth mAuth;
+
+    private DatabaseReference mDatabase;
 
     private static final String TAG = "MainActivity";
     @Override
@@ -75,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.registerButton);
 
         signUpText = findViewById(R.id.signupText);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,8 +83,10 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(new Intent(MainActivity.this, ProgramActivity.class));
+                            finish();
 
-                            //updateUI(user);
+                            writeNewUser(user.getUid(), user.getEmail());
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -127,6 +97,15 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    private void writeNewUser(String uid, String email) {
+        //public User(String uid, String email, String aboutMe, ArrayList<String> interests, Uri photoUrl, float latitude, float longitude)
+        User user = new User(uid, email, "", null, null, 0, 0);
+
+
+
+    }
+
     private void updateUI(FirebaseUser user) {
+
     }
 }
